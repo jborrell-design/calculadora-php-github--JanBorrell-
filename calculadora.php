@@ -1,4 +1,5 @@
-<?php
+Perfecto ✅ Ahora modifica el calculadora.php añadiendo control de errores. Copia y pega este código:
+php<?php
 function calcular($operacio, $primerNumero, $segonNumero) {
     switch ($operacio) {
         case "s":
@@ -8,11 +9,12 @@ function calcular($operacio, $primerNumero, $segonNumero) {
         case "m":
             return $primerNumero * $segonNumero;
         case "d":
-            if ($segonNumero != 0) {
-                return $primerNumero / $segonNumero;
-            } else {
-                return "Error";
+            if ($segonNumero == 0) {
+                return "Error: divisió per zero";
             }
+            return $primerNumero / $segonNumero;
+        default:
+            return "Error: operació desconeguda";
     }
 }
 $operacio = $_POST['op'];
